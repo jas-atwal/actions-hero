@@ -1,0 +1,32 @@
+# trigger
+name: "Hello World Workflow"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # enables a button so the workflow can be triggered manually
+  workflow_dispatch:
+jobs:
+  first-job-hello:
+    # either runs-on ubuntu or windows latest
+    runs-on: ubuntu-latest
+      steps:
+        # use any steps in the github & community marketplace
+        - uses: actions/checkout@v2
+        # own step (not published)
+        - name: hello-world
+          run: echo "hello world"
+          # which shell do you want to use
+          shell: bash
+  second-job-goodbye:
+    runs-on: ubuntu-latest
+      steps:
+        - name: "goodbye-world"
+          run: echo "goodbye world"
+          shell: bash
+
+
+
