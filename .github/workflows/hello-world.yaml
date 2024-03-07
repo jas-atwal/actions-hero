@@ -13,20 +13,20 @@ jobs:
   first-job-hello:
     # either runs-on ubuntu or windows latest
     runs-on: ubuntu-latest
-      steps:
-        # use any steps in the github & community marketplace
-        - uses: actions/checkout@v2
-        # own step (not published)
-        - name: hello-world
-          run: echo "hello world"
-          # which shell do you want to use
-          shell: bash
+    steps:
+      # use any steps in the github & community marketplace
+      - uses: actions/checkout@v2        
+      # own step (not published)
+      - name: hello-world
+        run: echo "hello world"
+        # which shell do you want to use
+        shell: bash
   second-job-goodbye:
     runs-on: ubuntu-latest
-      steps:
-        - name: "goodbye-world"
-          run: echo "goodbye world"
-          shell: bash
+    steps:
+      - name: "goodbye-world"
+        run: echo "goodbye world"
+        shell: bash
 
 
 
